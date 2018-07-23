@@ -1,5 +1,7 @@
 body { 
-    margin: 0
+    margin: 0;
+    font-style: 'Roboto'
+
 }
 
 header {
@@ -19,5 +21,10 @@ header input {
 }
 
 .blablabla {
-    margin: 23px;
+    /* margin: 23px; */
+    background: rgb(77, 109, 106);
+    padding:20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid goldenrod;
 }
+

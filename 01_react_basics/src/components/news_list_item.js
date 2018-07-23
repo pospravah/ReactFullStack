@@ -1,29 +1,12 @@
 import React from 'react';
-import { css } from 'glamor';
+// enable of webpack modules needed for import classes
+import classes from '../css/styles.css'
 
 const NewsItem = ({item}) => {
     
-    let news_item = css({
-        padding:'20px',
-        boxSizing: 'border-box',
-        borderBottom: '1px solid yellow',
-        ':hover':{
-            color:'blue'
-        },
-        '@media(max-width:500px)':{
-            color: 'blue'
-        }
-    })
-
-    let item_grey = css({
-        background: 'lightgrey'
-    })
-
-    //1st. usage: <div {...news_item} {...item_grey}>
-    //2nd equals usage: <div className={`${news_item} ${item_grey}`}>
 
     return (
-        <div className={`${news_item} ${item_grey}`}>
+        <div className={classes.blablabla}>
             <h3>{item.title}</h3>
             <div>
                 {item.feed}

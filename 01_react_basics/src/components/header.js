@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
-import '../css/styles.css'
+// import '../css/styles.css'
+// enable of webpack modules needed for import classes
+import classes from '../css/styles.css'
 import { backdrop } from '../../node_modules/glamor';
 
 class Header extends Component {
@@ -15,7 +17,8 @@ class Header extends Component {
         // console.log(event.target.value)
         const bcolor = event.target.value === '' ? 'active' : 'non-active' ;
         this.setState({
-            keywords:event.target.value
+            keywords:event.target.value,
+            active:bcolor
         })
     }
 
@@ -26,7 +29,7 @@ class Header extends Component {
     render() {
         
         return (
-            <header  className={this.state.active}>  
+            <header  className={classes.logo}>  
                 <div className='logo' onClick = {this.hay}>Logo</div>
                 <input type='text'
                 onChange={(e) => this.inputChangeHandler(e)}
