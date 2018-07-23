@@ -1,17 +1,22 @@
 import React,{ Component } from 'react';
 import '../css/styles.css'
+import { backdrop } from '../../node_modules/glamor';
 
 class Header extends Component {
 
+    // state - special word in React for 'state'
     state = {
-        title: 'the keywords',
-        keywords:'Hello'
+        active:'active',
+        title:'the keywords',
+        keywords:''
     }
 
     inputChangeHandler(event) {
         // console.log(event.target.value)
+        const bcolor = event.target.value === '' ? 'active' : 'non-active' ;
         this.setState({
-            keywords: event.target.value
+            keywords:event.target.value,
+            active:bcolor
         })
     }
 
@@ -20,12 +25,26 @@ class Header extends Component {
     }
 
     render() {
-        console.log(this.state.keywords)
+        
+        // 1st. inline styling without variable - doublequotes:
+        // style={{background:'yellow'}}
+        // styling inline variable style
+        // const style = {
+        //     background: 'red'
+        // }
+        // if ( this.state.keywords == ''){
+        //     style.background = 'red'
+        // } else {
+        //     style.background = 'green'
+        // }
+        // ex. header style={style}
+        // ex. state. style={{background:`${this.state.active?'green':'red'}`}}
+
         return (
-            <header className='logo' onClick = {this.hay}>
-                <div>Logo</div>
+            <header style={{background:`${this.state.active=='active'?'red':'green'}`}} className={this.state.active}>  
+                <div className='logo' onClick = {this.hay}>Logo</div>
                 <input type='text'
-                onChange={ (e) => this.inputChangeHandler(e)}
+                onChange={(e) => this.inputChangeHandler(e)}
                 />
                 <div>{this.state.title}</div>
                 <div>{this.state.keywords}</div>

@@ -6,25 +6,18 @@ import JSON from './db.json';
 import Header from './components/header'
 import NewsList from './components/news_list'
 
-// const App = () => {
 class App extends Component {
-    // console.log(JSON)
-    // return (
-    //     <div>
-    //         <Header/>
-    //     </div>
-    // )
-
     state = {
         news: JSON
     }
 
     render (){
-        // console.log(this.state.news)
         return (
             <div>
                 <Header/>
-                <NewsList news={this.state.news} donkey='Me!' />
+                <NewsList news={this.state.news} donkey='Me!'>
+                    Hello dudes
+                </NewsList>
             </div>
         ) 
     } 

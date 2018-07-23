@@ -14,7 +14,7 @@ const NewsList = (props) => {
 
     const items = props.news.map((item)=>{
         return (
-            <NewsItem  item={item} />
+                <NewsItem key={item.id} item={item} />
             )
         });
      
@@ -22,6 +22,7 @@ const NewsList = (props) => {
     //  console.log(props.donkey)
      return (
          <div>
+            {props.children}
             {items}
          </div>
      )
