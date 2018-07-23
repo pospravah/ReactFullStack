@@ -47,11 +47,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
-   "babel": {
+  "babel": {
     "presets": [
       "react-app"
     ]
-  },	
+  },
   "eslintConfig": {
     "extends": "react-app"
   }

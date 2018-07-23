@@ -15,8 +15,7 @@ class Header extends Component {
         // console.log(event.target.value)
         const bcolor = event.target.value === '' ? 'active' : 'non-active' ;
         this.setState({
-            keywords:event.target.value,
-            active:bcolor
+            keywords:event.target.value
         })
     }
 
@@ -26,22 +25,8 @@ class Header extends Component {
 
     render() {
         
-        // 1st. inline styling without variable - doublequotes:
-        // style={{background:'yellow'}}
-        // styling inline variable style
-        // const style = {
-        //     background: 'red'
-        // }
-        // if ( this.state.keywords == ''){
-        //     style.background = 'red'
-        // } else {
-        //     style.background = 'green'
-        // }
-        // ex. header style={style}
-        // ex. state. style={{background:`${this.state.active?'green':'red'}`}}
-
         return (
-            <header style={{background:`${this.state.active=='active'?'red':'green'}`}} className={this.state.active}>  
+            <header  className={this.state.active}>  
                 <div className='logo' onClick = {this.hay}>Logo</div>
                 <input type='text'
                 onChange={(e) => this.inputChangeHandler(e)}
