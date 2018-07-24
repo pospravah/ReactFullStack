@@ -2,43 +2,51 @@ import React,{ Component } from 'react';
 // import '../css/styles.css'
 // enable of webpack modules needed for import classes
 import classes from '../css/styles.css'
-import { backdrop } from '../../node_modules/glamor';
 
+// 1st class base component 
 class Header extends Component {
-
-    // state - special word in React for 'state'
-    state = {
-        active:'active',
-        title:'the keywords',
-        keywords:''
-    }
-
-    inputChangeHandler(event) {
-        // console.log(event.target.value)
-        const bcolor = event.target.value === '' ? 'active' : 'non-active' ;
-        this.setState({
-            keywords:event.target.value,
-            active:bcolor
-        })
-    }
-
-    hay (params)  {
-        console.log("Hey!")
-    }
-
-    render() {
-        
-        return (
-            <header  className={classes.logo}>  
-                <div className='logo' onClick = {this.hay}>Logo</div>
-                <input type='text'
-                onChange={(e) => this.inputChangeHandler(e)}
-                />
-                <div>{this.state.title}</div>
-                <div>{this.state.keywords}</div>
-            </header>
-            )
-    }
+state = {
+    passKeywords:''
 }
+
+inputChangeHandler = (event) => {
+    this.setState({
+        passKeywords:event.target.value
+    });
+}
+render() {
+    console.log(this.props.passFilted)
+    return (
+    <header>  
+        <div className={classes.logo}>Logo</div>
+        <input
+            type='text'
+            onChange={this.props.passKeywords}
+        />
+        <div>
+            {this.props.passFilted}
+        </div>
+        {/*<div>{this.state.keywords}</div> */}
+    </header>
+    )
+ }
+}
+
+// functional component
+// const Header = (props) => {
+//     return(
+//         <header>  
+//         <div className={classes.logo}>Logo</div>
+//         <input
+//             type='text'
+//             onChange={props.passKeywords}
+//         />        
+//         <div>
+//             {props.passFilted}
+//         </div>
+//     </header>
+//     )
+// }
+   
 
 export default Header;

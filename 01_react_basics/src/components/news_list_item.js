@@ -2,14 +2,15 @@ import React from 'react';
 // enable of webpack modules needed for import classes
 import classes from '../css/styles.css'
 
-const NewsItem = ({item}) => {
+const NewsItem = (props) => {
     
+    // console.log(props);
 
     return (
         <div className={classes.blablabla}>
-            <h3>{item.title}</h3>
+            <h3>{props.item.title}</h3>
             <div>
-                {item.feed}
+                {props.item.feed}
             </div>
         </div>    
         )
