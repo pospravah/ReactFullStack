@@ -2,7 +2,7 @@ import React from 'react';
 
 const Conditional = () => {
 
-    const value = true;
+    // const value = true;
 
     const returnValue = () => {
         return false
@@ -26,7 +26,6 @@ const Conditional = () => {
         <div>
             {
                 showIt()
-                // returnValue()  ?
             }
         </div>
     )
