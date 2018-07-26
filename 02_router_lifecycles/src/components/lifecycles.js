@@ -7,38 +7,44 @@ class Life extends Component {
         title:'Life cycles'
     }
 
-    // 3th before render
-     componentWillMount(){
-         console.log('3th before render')
-     }
+//     // 3th before render
+//      componentWillMount(){
+//          console.log('3th before render')
+//      }
 
-     componentWillUpdate(){
-         console.log('BEFORE UPDATE')
-     }
+//      componentWillUpdate(){
+//          console.log('BEFORE UPDATE')
+//      }
 
-     componentDidUpdate(){
-        console.log('AFTER UPDATE')
-     }
+//      componentDidUpdate(){
+//         console.log('AFTER UPDATE')
+//      }
 
-     // Evaluate props, states changes while RENDERING
-     shouldComponentUpdate(nextProps,nextState){
-        console.log(this.state.title);
-        console.log(nextState.title);
-        if(nextState.title !== 'something else'){
-            return true;
-        } else {
-         return false;
-        }
-     }
+//      // Evaluate props, states changes while RENDERING
+//      shouldComponentUpdate(nextProps,nextState){
+//         console.log(this.state.title);
+//         console.log(nextState.title);
+//         if(nextState.title !== 'something else'){
+//             return true;
+//         } else {
+//          return false;
+//         }
+//      }
 
-     componentWillReceiveProps(){
-         console.log('BEFORE RECEIVE PROPS')
-     }
+//      componentWillReceiveProps(){
+//          console.log('BEFORE RECEIVE PROPS')
+//      }
 
-     // use leave component
-     componentWillUnmount(){
-        console.log('UNMOUNT')
-     }
+//      // use leave component
+//      componentWillUnmount(){
+//         console.log('UNMOUNT')
+//      }
+
+    // 5th after render
+    // componentDidMount(){
+    //     console.log('5th after render')
+    //     document.querySelector('h3').style.color = 'red'
+    // }
 
     // 4th render jsx
     render(){
@@ -53,13 +59,9 @@ class Life extends Component {
             }>Click to change</div>
             </div>
         )
-    }
+    }    
+    
 
-    // 5th after render
-    componentDidMount(){
-        console.log('5th after render')
-        document.querySelector('h3').style.color = 'red'
-    }
 }
 
 export default Life;
