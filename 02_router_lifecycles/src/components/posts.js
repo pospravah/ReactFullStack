@@ -25,15 +25,11 @@ const Posts = () => {
         {/* {list} */}
         {/* </div> */}
 
-    return ids.map (item => {
-        return (
-             <span key={item.id}>
-             {/* key is imortant */}
-                <Link to={item.id}>{item.name}</Link><br />
-            </span>
-        )
-        }
-        )
+    return [
+        <div key="1">Hello </div>,
+        <div key="2"> i am </div>,
+        <div key="3"> a react app </div>
+    ]
 }
 
 export default Posts;

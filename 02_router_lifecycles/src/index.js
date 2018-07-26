@@ -31,7 +31,7 @@ const App = () =>{
                     {/* <Redirect from="/profile" to "/" /> */}
                     <Route path="/posts" component={Posts} />
                     <Route path="/posts/:id:/username" component={PostItem} />
-                    <Route path="/profiles" component={Profile} />
+                    <Route path="/profiles" exact component={Profile} />
                     <Route path="/life" component={Life} />
                     <Route path="/conditional" component={Conditional} />
                     <Route path="/" exact  component={Home} />
