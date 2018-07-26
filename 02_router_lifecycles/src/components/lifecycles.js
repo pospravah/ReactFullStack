@@ -12,11 +12,25 @@ class Life extends Component {
          console.log('3th before render')
      }
 
+     componentWillUpdate(){
+         console.log('BEFORE UPDATE')
+     }
+
+     componentDidUpdate(){
+        console.log('AFTER UPDATE')
+     }
+
     // 4th render jsx
     render(){
+        console.log('RENDERING')
         return(
             <div>
                 <h3>{this.state.title}</h3>
+                <div onClick={
+                ()=> this.setState({
+                    title:'something else'
+                })
+            }>Click to change</div>
             </div>
         )
     }
