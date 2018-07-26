@@ -1,27 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 // COMPONENTS
 import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profiles';
+import PostItem from './components/post_item';
+import Life from './components/lifecycles';
 
 const App = () =>{
     return (
         <BrowserRouter>
             <div>
                 <header>
-                    <Link to="/">Home</Link><br/>
-                    <Link to="/posts">Posts</Link><br/>
-                    <Link to={{
+                    <NavLink to="/">Home</NavLink><br/>
+                    <NavLink to="/posts"
+                        activeStyle={{color:'red'}}
+                        activeClassName="selected"
+                        >Posts</NavLink><br/>
+                    <NavLink to={{
                         pathname:"/profiles",
-                    }}>Profiles</Link><br/>
+                    }}>Profiles</NavLink><br/>
+                    <NavLink to="/life">Life</NavLink><br />
                     <hr />
                 </header>
-                <Route path="/" exact component={Home} />
-                <Route path="/posts" component={Posts} />
-                <Route path="/profiles" component={Profile} />
+                <Switch>
+                    {/* <Redirect from="/profile" to "/" /> */}
+                    <Route path="/posts" component={Posts} />
+                    <Route path="/posts/:id:/username" component={PostItem} />
+                    <Route path="/profiles" component={Profile} />
+                    <Route path="/life" component={Life} />
+                    <Route path="/" exact  component={Home} />
+                    <Route component={() => { return(<div>oops 404 !</div>)}} />
+                </Switch>
             </div>
         </BrowserRouter>
         )
