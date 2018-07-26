@@ -20,6 +20,7 @@ class Life extends Component {
         console.log('AFTER UPDATE')
      }
 
+     // Evaluate props, states changes while RENDERING
      shouldComponentUpdate(nextProps,nextState){
         console.log(this.state.title);
         console.log(nextState.title);
@@ -28,6 +29,15 @@ class Life extends Component {
         } else {
          return false;
         }
+     }
+
+     componentWillReceiveProps(){
+         console.log('BEFORE RECEIVE PROPS')
+     }
+
+     // use leave component
+     componentWillUnmount(){
+        console.log('UNMOUNT')
      }
 
     // 4th render jsx
