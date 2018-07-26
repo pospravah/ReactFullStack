@@ -20,6 +20,16 @@ class Life extends Component {
         console.log('AFTER UPDATE')
      }
 
+     shouldComponentUpdate(nextProps,nextState){
+        console.log(this.state.title);
+        console.log(nextState.title);
+        if(nextState.title !== 'something else'){
+            return true;
+        } else {
+         return false;
+        }
+     }
+
     // 4th render jsx
     render(){
         console.log('RENDERING')
