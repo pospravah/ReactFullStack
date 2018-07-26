@@ -21,15 +21,15 @@ class Life extends Component {
 //      }
 
 //      // Evaluate props, states changes while RENDERING
-//      shouldComponentUpdate(nextProps,nextState){
-//         console.log(this.state.title);
-//         console.log(nextState.title);
-//         if(nextState.title !== 'something else'){
-//             return true;
-//         } else {
-//          return false;
-//         }
-//      }
+     shouldComponentUpdate(nextProps,nextState){
+        console.log(this.state.title);
+        console.log(nextState.title);
+        if(this.state.title === nextState.title){
+            return false
+        } else {
+        return true    
+        }
+     }
 
 //      componentWillReceiveProps(){
 //          console.log('BEFORE RECEIVE PROPS')
@@ -60,7 +60,7 @@ class Life extends Component {
             </div>
         )
     }    
-    
+
 
 }
 
