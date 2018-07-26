@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Life extends Component {
+class Life extends PureComponent  {
     // 1st get default props
     // 2nd set default state
     state = {
@@ -21,15 +21,15 @@ class Life extends Component {
 //      }
 
 //      // Evaluate props, states changes while RENDERING
-     shouldComponentUpdate(nextProps,nextState){
-        console.log(this.state.title);
-        console.log(nextState.title);
-        if(this.state.title === nextState.title){
-            return false
-        } else {
-        return true    
-        }
-     }
+    //  shouldComponentUpdate(nextProps,nextState){
+    //     console.log(this.state.title);
+    //     console.log(nextState.title);
+    //     if(this.state.title === nextState.title){
+    //         return false
+    //     } else {
+    //     return true    
+    //     }
+    //  }
 
 //      componentWillReceiveProps(){
 //          console.log('BEFORE RECEIVE PROPS')
