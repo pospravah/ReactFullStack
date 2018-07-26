@@ -27,7 +27,8 @@ const Posts = () => {
 
     return ids.map (item => {
         return (
-            <span key={item.id}>
+             <span key={item.id}>
+             {/* key is imortant */}
                 <Link to={item.id}>{item.name}</Link><br />
             </span>
         )
